@@ -4,7 +4,7 @@
   "description": "",
   "main": "like_button.js",
   "scripts": {
-    "watch": "npx babel --watch src --out-dir . --presets react-app/prod",
+    "watch": "npx babel --watch src --out-dir . --presets babel/preset-env react-app/prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ChristianHohlfeld/EditAble#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.19.4",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2"
   }
