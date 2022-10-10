@@ -33,7 +33,7 @@ var LikeButton = function (_React$Component) {
 
       return e('button', { onClick: function onClick() {
           return _this2.setState({ liked: true });
-        } }, 'Like');
+        } }, 'Likee');
     }
   }]);
 
