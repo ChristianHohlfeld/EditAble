@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html id="htmlroot" name="htmlroot">
-
 <head>
-  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div data-content-editable name="content">Please type something in here</div>
   <script>
-
-    // select the target node
     var target = document.getElementById("htmlroot");
-
-    // create an observer instance
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-        //   console.log(mutation.type);
-        //  console.log(mutation)
         localStorage.setItem('content', JSON.stringify(document.getElementsByName("content").outerHTML));
       });
     });
-
     var config = { characterData: true, attributes: false, childList: true, subtree: false };
     observer.observe(target, config);
     addEventListener('mousedown', (event) => {
@@ -35,37 +24,34 @@
       }
     });
   </script>
-
-  <script type="module">
-    import React from "https://unpkg.com/es-react@latest/dev/react.js";
-    import ReactDOM from "https://unpkg.com/es-react@latest/dev/react-dom.js";
-    import PropTypes from "https://unpkg.com/es-react@latest/dev/prop-types.js";
-    import htm from "https://unpkg.com/htm@latest?module";
-    const html = htm.bind(React.createElement);
-
-    const App = (props) => {
-      return html`<div>Hello Wo fdsrl2d! Fer wreo: ${props.foo}</div>`;
-    }
-
-    ReactDOM.render(
-      html`<${App} foo=${"bar"} />`,
-      document.getElementById("root")
-    );
-  </script>
-  <script>
-  </script>
-  </p>
-
   <div id="root">
     Loading...
     <noscript>
       JavaScript is required.
     </noscript>
   </div>
-  <h1 data-content-editable>My First </h1>
-  <p data-content-editable>My first paragrapdh.</p>
-  <div style="visibility: hidden; height: 0px; width: 0px;" id="stateContainer" name="stateContainer">
-    StateContainerContent</div>
+  <script type="module">
+    import React from "https://unpkg.com/es-react@latest/dev/react.js";
+    import ReactDOM from "https://unpkg.com/es-react@latest/dev/react-dom.js";
+    import PropTypes from "https://unpkg.com/es-react@latest/dev/prop-types.js";
+    import htm from "https://unpkg.com/htm@latest?module";
+    const html = htm.bind(React.createElement);
+    const App = (props) => {
+      return html`
+      <div>
+        <div>Welcome to Edit${props.able}
+        </div>   
+        <div data-content-editable name="content">
+          Please click and type something in here
+        </div>
+      </div>`;
+    }
+    ReactDOM.render(
+      html`<${App} able=${"Able"} />`,
+      document.getElementById("root"));
+  </script>
+  <div style="visibility: hidden; height: 0px; width: 0px;" id="state-container" data-state-persistence="">
+    state persistence</div>
 </body>
 
 </html>
