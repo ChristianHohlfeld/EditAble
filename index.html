@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html id="htmlroot" name="htmlroot">
+
 <head>
 </head>
+
 <body>
+  <!-- We will put our React component inside this div. -->
+  <div id="like_button_container"></div>
+  <div id="app_container"></div>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="app.js"></script>
+  <script src="like_button.js"></script>
+
   <script>
     var target = document.getElementById("htmlroot");
     var observer = new MutationObserver(function (mutations) {
@@ -50,8 +63,6 @@
       html`<${App} able=${"Able"} />`,
       document.getElementById("root"));
   </script>
-  <div style="visibility: hidden; height: 0px; width: 0px;" id="state-container" data-state-persistence="">
-    state persistence</div>
 </body>
 
 </html>
